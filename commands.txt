@@ -1,1 +1,24 @@
 # Commands used in this project
+git clone https://github.com/mikemwu10/qtm350-quiz01-mikewu.git
+cd qtm350-quiz01-mikewu
+touch commands.txt
+echo '# Commands used in this project' >> commands.txt
+git checkout -b feature-update
+mkdir -p reports
+touch reports/summary.md
+echo 'This document provides a summary of the project updates.' >> reports/summary.md
+git add reports
+git commit -m 'Add reports directory'
+touch reports/file{1..3}.txt
+git mv data/raw-data.csv data/input-data.csv
+mkdir -p scripts/backup && cp scripts/*.py scripts/backup/
+git rm docs/documentation.md
+git add -A
+git commit -m 'Update project files'
+touch .gitignore
+echo 'temp/' > .gitignore
+echo 'dataset0?.csv' >> .gitignore
+cat .gitignore
+git add .gitignore && git commit -m "Add .gitignore file"
+git switch main
+git merge feature-update
